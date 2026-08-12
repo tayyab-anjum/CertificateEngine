@@ -25,7 +25,7 @@ export const LandingPage = ({ onGetStarted, onNavigateHowToUse }) => {
     },
     {
       q: "Is BatchCert free to use?",
-      a: "Yes! BatchCert is 100% free with no hidden fees, subscriptions, or watermarks. You can generate unlimited certificates."
+      a: "Yes! BatchCert is a 100% free bulk certificate generator with no hidden fees, subscriptions, or watermarks. You can generate unlimited certificates."
     },
     {
       q: "Is my data private and secure?",
@@ -103,7 +103,7 @@ export const LandingPage = ({ onGetStarted, onNavigateHowToUse }) => {
           }}>
             <img 
               src="/logo.png" 
-              alt="BatchCert Logo" 
+              alt="BatchCert - free bulk certificate generator logo" 
               style={{
                 width: '100px', height: '100px', objectFit: 'cover', borderRadius: '24px',
                 filter: 'drop-shadow(0 8px 24px rgba(42, 191, 164, 0.3))'
@@ -129,10 +129,22 @@ export const LandingPage = ({ onGetStarted, onNavigateHowToUse }) => {
             opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
             transition: 'all 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.35s',
             fontSize: '1rem', color: '#64748b', fontWeight: 500, letterSpacing: '3px',
-            textTransform: 'uppercase', marginBottom: '48px'
+            textTransform: 'uppercase', marginBottom: '16px'
           }}>
             Free Bulk Certificate Generator
           </p>
+
+          {/* Zero-friction badges */}
+          <div style={{
+            opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+            transition: 'all 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.4s',
+            display: 'flex', gap: '16px', justifyContent: 'center', marginBottom: '48px',
+            fontSize: '0.9rem', color: '#2ABFA4', fontWeight: 600, flexWrap: 'wrap'
+          }}>
+            <span>✓ No signup required</span>
+            <span>✓ 100% free</span>
+            <span>✓ No watermark</span>
+          </div>
 
           {/* Headline */}
           <h2 style={{
@@ -152,7 +164,7 @@ export const LandingPage = ({ onGetStarted, onNavigateHowToUse }) => {
             fontSize: '1.1rem', color: '#94a3b8', textAlign: 'center', lineHeight: 1.7,
             maxWidth: '580px', marginBottom: '40px'
           }}>
-            Import your Excel data, upload your certificate template, and generate hundreds of personalized certificates in seconds.
+            Perfect for teachers, course creators, HR teams, and event organizers. Import your Excel data, upload your certificate template, and use our bulk certificate generator to create hundreds of personalized certificates in seconds.
           </p>
 
           {/* Feature pills */}
@@ -314,9 +326,9 @@ export const LandingPage = ({ onGetStarted, onNavigateHowToUse }) => {
           {/* Footer */}
           <p style={{
             opacity: isVisible ? 1 : 0, transition: 'opacity 0.6s ease 1.1s',
-            marginTop: '24px', fontSize: '0.8rem', color: '#334155'
+            marginTop: '24px', fontSize: '0.8rem', color: '#334155', textAlign: 'center'
           }}>
-            © 2026 BatchCert. All rights reserved.
+            © 2026 BatchCert - The Free Bulk Certificate Generator.<br />All rights reserved.
           </p>
         </div>
       </div>

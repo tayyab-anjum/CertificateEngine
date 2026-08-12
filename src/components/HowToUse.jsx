@@ -32,7 +32,7 @@ export const HowToUse = ({ onBack }) => {
       title: '4. Batch Export All Certificates',
       icon: Download,
       color: '#F5C563',
-      description: 'Go to Generate Copies and choose ZIP of PNGs or Combined PDF. Click Start Bulk Generation — BatchCert processes all certificates in seconds right inside your browser.',
+      description: 'Go to Generate Copies and choose ZIP of PNGs or Combined PDF. Click Start Bulk Generation — our bulk certificate generator processes all certificates in seconds right inside your browser.',
       tip: 'ZIP format gives individual high-res PNG files for each recipient'
     }
   ];
@@ -72,7 +72,7 @@ export const HowToUse = ({ onBack }) => {
           How to Use BatchCert
         </h1>
         <p style={{ fontSize: '1rem', color: '#94a3b8', maxWidth: '540px', margin: '0 auto', lineHeight: 1.6 }}>
-          Generate hundreds of personalized certificates in seconds. Follow these 4 easy steps.
+          Generate hundreds of personalized certificates in seconds. Follow these 4 easy steps to use our free bulk certificate generator.
         </p>
       </div>
 

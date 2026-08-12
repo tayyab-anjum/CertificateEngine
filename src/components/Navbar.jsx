@@ -10,7 +10,7 @@ export const Navbar = ({ activeTab, setActiveTab, recipientCount, onOpenHowToUse
         <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
           <img 
             src="/logo.png" 
-            alt="BatchCert Logo" 
+            alt="BatchCert - free bulk certificate generator logo" 
             style={{ width: '46px', height: '46px', borderRadius: '12px', objectFit: 'cover' }} 
           />
           <div>
