@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Direct crawlers to the XML Sitemap
-Sitemap: https://batchcert.com/sitemap.xml
+Sitemap: https://batchcert.tech/sitemap.xml
