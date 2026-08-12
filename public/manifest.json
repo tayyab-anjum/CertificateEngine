@@ -1,0 +1,17 @@
+{
+  "name": "BatchCert - Bulk Certificate Generator",
+  "short_name": "BatchCert",
+  "description": "Generate hundreds of personalized certificates in seconds from Excel or CSV files.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0A1128",
+  "theme_color": "#2ABFA4",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "192x192 512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
