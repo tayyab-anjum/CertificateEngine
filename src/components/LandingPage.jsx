@@ -34,6 +34,14 @@ export const LandingPage = ({ onGetStarted, onNavigateHowToUse }) => {
     {
       q: "What file formats are supported for export?",
       a: "You can batch export your certificates as individual high-resolution PNG images inside a ZIP archive or as a single multi-page PDF document ready for bulk printing."
+    },
+    {
+      q: "Do I need to sign up or install anything?",
+      a: "No account or software installation required. BatchCert runs entirely in any modern web browser — just open the site and start generating."
+    },
+    {
+      q: "What certificate templates are supported?",
+      a: "You can upload any PNG, JPG, or PDF file as your certificate template. BatchCert also includes built-in default templates so you can get started immediately without any design files."
     }
   ];
 
@@ -111,27 +119,27 @@ export const LandingPage = ({ onGetStarted, onNavigateHowToUse }) => {
             />
           </div>
 
-          {/* App name */}
+          {/* App name / H1 */}
           <h1 style={{
             opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
             transition: 'all 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.2s',
             fontSize: 'clamp(2.5rem, 6vw, 4rem)', fontWeight: 800, letterSpacing: '-2px',
             background: 'linear-gradient(135deg, #2ABFA4 0%, #7DD9BC 40%, #F5C563 100%)',
             backgroundSize: '200% auto', WebkitBackgroundClip: 'text', backgroundClip: 'text',
-            color: 'transparent', marginBottom: '6px', lineHeight: 1.1,
+            color: 'transparent', marginBottom: '6px', lineHeight: 1.1, textAlign: 'center',
             animation: isVisible ? 'landingGradient 6s ease infinite' : 'none'
           }}>
-            BatchCert
+            Free Bulk Certificate Generator
           </h1>
 
-          {/* Tagline */}
+          {/* Brand name */}
           <p style={{
             opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
-            transition: 'all 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.35s',
-            fontSize: '1rem', color: '#64748b', fontWeight: 500, letterSpacing: '3px',
-            textTransform: 'uppercase', marginBottom: '16px'
+            transition: 'all 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.28s',
+            fontSize: '1rem', color: '#64748b', fontWeight: 600, letterSpacing: '4px',
+            textTransform: 'uppercase', marginBottom: '8px'
           }}>
-            Free Bulk Certificate Generator
+            BatchCert
           </p>
 
           {/* Zero-friction badges */}
@@ -303,8 +311,12 @@ export const LandingPage = ({ onGetStarted, onNavigateHowToUse }) => {
                     <span>{faq.q}</span>
                     <ChevronDown size={16} style={{ transform: openFaqIndex === i ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.2s', flexShrink: 0 }} />
                   </button>
-                  {openFaqIndex === i && (
+                  {openFaqIndex === i ? (
                     <div style={{ padding: '0 18px 14px', fontSize: '0.88rem', color: '#94a3b8', lineHeight: 1.6 }}>
+                      {faq.a}
+                    </div>
+                  ) : (
+                    <div style={{ padding: 0, fontSize: '0.88rem', color: '#94a3b8', lineHeight: 1.6, overflow: 'hidden', height: 0, visibility: 'hidden' }} aria-hidden="true">
                       {faq.a}
                     </div>
                   )}
