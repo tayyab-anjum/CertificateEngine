@@ -7,7 +7,7 @@ export const Navbar = ({ activeTab, setActiveTab, recipientCount, onOpenHowToUse
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '16px' }}>
         
         {/* Logo & Title */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+        <a href="/" style={{ display: 'flex', alignItems: 'center', gap: '14px', textDecoration: 'none', color: 'inherit' }}>
           <img 
             src="/logo.png" 
             alt="BatchCert - free bulk certificate generator logo" 
@@ -15,18 +15,18 @@ export const Navbar = ({ activeTab, setActiveTab, recipientCount, onOpenHowToUse
           />
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-              <h1 style={{ fontSize: '1.4rem', fontWeight: '700', letterSpacing: '-0.02em', background: 'linear-gradient(to right, #2ABFA4, #F5C563)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+              <h1 style={{ fontSize: '1.4rem', fontWeight: '700', letterSpacing: '-0.02em', background: 'linear-gradient(to right, #2ABFA4, #F5C563)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', margin: 0 }}>
                 BatchCert
               </h1>
               <span className="badge badge-teal" style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
                 <Sparkles size={12} /> Batch Generator
               </span>
             </div>
-            <p style={{ fontSize: '0.82rem', color: '#94a3b8', marginTop: '2px' }}>
+            <p style={{ fontSize: '0.82rem', color: '#94a3b8', margin: '2px 0 0 0' }}>
               Upload your data + template & generate all certificates automatically
             </p>
           </div>
-        </div>
+        </a>
 
         {/* Tab Buttons — Import first, then Template, then Generate */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap', background: 'rgba(15, 23, 42, 0.6)', padding: '6px', borderRadius: '12px', border: '1px solid rgba(255, 255, 255, 0.08)' }}>

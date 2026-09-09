@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, BookOpen, Zap, Shield, Clock, Upload, FileSpreadsheet, Download, HelpCircle, ChevronDown } from 'lucide-react';
+import { ArrowRight, BookOpen, Shield, Upload, FileSpreadsheet, Download, HelpCircle, ChevronDown } from 'lucide-react';
+
 
 export const LandingPage = ({ onGetStarted, onNavigateHowToUse }) => {
   const [isExiting, setIsExiting] = useState(false);
@@ -142,6 +143,16 @@ export const LandingPage = ({ onGetStarted, onNavigateHowToUse }) => {
             BatchCert
           </p>
 
+          {/* Navigation Bar for Crawlers and Accessibility */}
+          <nav aria-label="Page Navigation" style={{
+            opacity: isVisible ? 1 : 0, transition: 'all 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.35s',
+            display: 'flex', gap: '20px', justifyContent: 'center', marginBottom: '24px', flexWrap: 'wrap'
+          }}>
+            <a href="#how-it-works" style={{ color: '#2ABFA4', fontSize: '0.9rem', textDecoration: 'none', fontWeight: 500 }}>How It Works</a>
+            <a href="#features" style={{ color: '#2ABFA4', fontSize: '0.9rem', textDecoration: 'none', fontWeight: 500 }}>Features</a>
+            <a href="#faq" style={{ color: '#2ABFA4', fontSize: '0.9rem', textDecoration: 'none', fontWeight: 500 }}>FAQ</a>
+          </nav>
+
           {/* Zero-friction badges */}
           <div style={{
             opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
@@ -176,58 +187,67 @@ export const LandingPage = ({ onGetStarted, onNavigateHowToUse }) => {
           </p>
 
           {/* Feature pills */}
-          <div style={{
-            opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
-            transition: 'all 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.6s',
-            display: 'flex', gap: '12px', flexWrap: 'wrap', justifyContent: 'center',
-            marginBottom: '48px'
-          }}>
-            {[
-              { icon: FileSpreadsheet, label: 'Import Excel/CSV', color: '#2ABFA4' },
-              { icon: Upload, label: 'Upload Template', color: '#F5C563' },
-              { icon: Download, label: 'Batch Export', color: '#2ABFA4' },
-            ].map((item, i) => (
-              <div key={i} style={{
-                display: 'flex', alignItems: 'center', gap: '8px', padding: '8px 16px',
-                borderRadius: '24px', background: 'rgba(255,255,255,0.04)',
-                border: '1px solid rgba(255,255,255,0.08)', fontSize: '0.9rem',
-                fontWeight: 500, color: '#cbd5e1'
-              }}>
-                <item.icon size={16} color={item.color} />
-                {item.label}
-              </div>
-            ))}
-          </div>
+          <section id="features" aria-label="Features Overview" style={{ width: '100%', marginBottom: '48px' }}>
+            <h2 style={{ fontSize: '1.1rem', fontWeight: 600, color: '#94a3b8', textAlign: 'center', marginBottom: '16px' }}>
+              Built For Seamless Bulk Certificate Generation
+            </h2>
+            <div style={{
+              opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+              transition: 'all 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.6s',
+              display: 'flex', gap: '12px', flexWrap: 'wrap', justifyContent: 'center'
+            }}>
+              {[
+                { icon: FileSpreadsheet, label: 'Import Excel/CSV', color: '#2ABFA4' },
+                { icon: Upload, label: 'Upload Template', color: '#F5C563' },
+                { icon: Download, label: 'Batch Export', color: '#2ABFA4' },
+              ].map((item, i) => (
+                <div key={i} style={{
+                  display: 'flex', alignItems: 'center', gap: '8px', padding: '8px 16px',
+                  borderRadius: '24px', background: 'rgba(255,255,255,0.04)',
+                  border: '1px solid rgba(255,255,255,0.08)', fontSize: '0.9rem',
+                  fontWeight: 500, color: '#cbd5e1'
+                }}>
+                  <item.icon size={16} color={item.color} />
+                  {item.label}
+                </div>
+              ))}
+            </div>
+          </section>
 
           {/* How it works mini */}
-          <div style={{
-            opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
-            transition: 'all 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.65s',
-            display: 'flex', gap: '32px', marginBottom: '52px', flexWrap: 'wrap',
-            justifyContent: 'center'
-          }}>
-            {[
-              { step: '1', title: 'Import Data', desc: 'Excel or CSV file' },
-              { step: '2', title: 'Upload Template', desc: 'Your certificate design' },
-              { step: '3', title: 'Generate', desc: 'Download all copies at once' },
-            ].map((s, i) => (
-              <div key={i} style={{
-                display: 'flex', alignItems: 'center', gap: '12px'
-              }}>
-                <div style={{
-                  width: '36px', height: '36px', borderRadius: '10px',
-                  background: 'linear-gradient(135deg, #1A9E87, #2ABFA4)',
-                  display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  fontSize: '0.85rem', fontWeight: 700, color: '#fff', flexShrink: 0
-                }}>{s.step}</div>
-                <div>
-                  <div style={{ fontWeight: 600, color: '#e2e8f0', fontSize: '0.95rem' }}>{s.title}</div>
-                  <div style={{ fontSize: '0.8rem', color: '#64748b' }}>{s.desc}</div>
+          <section id="how-it-works" aria-label="How It Works" style={{ width: '100%', marginBottom: '52px' }}>
+            <h2 style={{ fontSize: '1.2rem', fontWeight: 600, color: '#e2e8f0', textAlign: 'center', marginBottom: '20px' }}>
+              How It Works in 3 Easy Steps
+            </h2>
+            <div style={{
+              opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+              transition: 'all 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.65s',
+              display: 'flex', gap: '32px', flexWrap: 'wrap',
+              justifyContent: 'center'
+            }}>
+              {[
+                { step: '1', title: 'Import Data', desc: 'Excel or CSV file' },
+                { step: '2', title: 'Upload Template', desc: 'Your certificate design' },
+                { step: '3', title: 'Generate', desc: 'Download all copies at once' },
+              ].map((s, i) => (
+                <div key={i} style={{
+                  display: 'flex', alignItems: 'center', gap: '12px'
+                }}>
+                  <div style={{
+                    width: '36px', height: '36px', borderRadius: '10px',
+                    background: 'linear-gradient(135deg, #1A9E87, #2ABFA4)',
+                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    fontSize: '0.85rem', fontWeight: 700, color: '#fff', flexShrink: 0
+                  }}>{s.step}</div>
+                  <div>
+                    <div style={{ fontWeight: 600, color: '#e2e8f0', fontSize: '0.95rem' }}>{s.title}</div>
+                    <div style={{ fontSize: '0.8rem', color: '#64748b' }}>{s.desc}</div>
+                  </div>
+                  {i < 2 && <div style={{ color: '#334155', fontSize: '1.2rem', marginLeft: '8px' }}>→</div>}
                 </div>
-                {i < 2 && <div style={{ color: '#334155', fontSize: '1.2rem', marginLeft: '8px' }}>→</div>}
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          </section>
 
           {/* CTA Buttons */}
           <div style={{
@@ -283,7 +303,7 @@ export const LandingPage = ({ onGetStarted, onNavigateHowToUse }) => {
           </div>
 
           {/* SEO FAQ Section */}
-          <section style={{
+          <section id="faq" style={{
             width: '100%', opacity: isVisible ? 1 : 0, transition: 'opacity 0.6s ease 0.85s',
             background: 'rgba(255, 255, 255, 0.02)', border: '1px solid rgba(255, 255, 255, 0.06)',
             borderRadius: '16px', padding: '28px 24px', marginBottom: '40px'
@@ -335,13 +355,22 @@ export const LandingPage = ({ onGetStarted, onNavigateHowToUse }) => {
             All processing happens in your browser — your data never leaves your device
           </div>
 
-          {/* Footer */}
-          <p style={{
+          {/* Footer with Internal Navigation Links */}
+          <footer style={{
             opacity: isVisible ? 1 : 0, transition: 'opacity 0.6s ease 1.1s',
-            marginTop: '24px', fontSize: '0.8rem', color: '#334155', textAlign: 'center'
+            marginTop: '24px', fontSize: '0.8rem', color: '#64748b', textAlign: 'center'
           }}>
-            © 2026 BatchCert - The Free Bulk Certificate Generator.<br />All rights reserved.
-          </p>
+            <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', marginBottom: '8px' }}>
+              <a href="https://batchcert.tech/" style={{ color: '#2ABFA4', textDecoration: 'none' }}>Home</a>
+              <span>•</span>
+              <a href="#how-it-works" style={{ color: '#2ABFA4', textDecoration: 'none' }}>How It Works</a>
+              <span>•</span>
+              <a href="#faq" style={{ color: '#2ABFA4', textDecoration: 'none' }}>FAQ</a>
+            </div>
+            <p style={{ margin: 0, color: '#475569' }}>
+              © 2026 <a href="https://batchcert.tech/" style={{ color: '#2ABFA4', textDecoration: 'none' }}>BatchCert</a> - The Free Bulk Certificate Generator.<br />All rights reserved.
+            </p>
+          </footer>
         </div>
       </div>
     </>
